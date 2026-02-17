@@ -1,0 +1,44 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🚀 Deploy website
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      # 1. Configuración de pnpm 
+      - name: ⚙️ Set up pnpm
+        uses: pnpm/action-setup@v3 
+        with:
+          version: 9
+
+      # 2. Configuración de Node.js 20+ con caché pnpm
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' 
+          cache: 'pnpm'
+
+      - name: 📦 Install dependencies
+        # Usa el flag temporal si el pnpm-lock.yaml no está sincronizado
+        run: pnpm install --no-frozen-lockfile 
+
+      - name: 🏗️ Build project (Genera 'out/' automáticamente)
+        # 3. Solo necesitamos 'pnpm run build' ya que 'output: export' está en next.config.mjs
+        run: pnpm run build 
+        
+      - name: 📂 Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftps4.us.freehostia.com
+          username: isafor8
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: multiserviciossosa.com.co/
+          local-dir: out/
