@@ -73,7 +73,7 @@ export function Footer() {
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/40">
-            {"© 2026 ISA Service. Todos los derechos reservados."}
+            {`© ${new Date().getFullYear()} Multiservicios Sosa. Todos los derechos reservados.`}
           </p>
           <p className="text-xs text-background/40">
             Colombia - Servicio de conserjeria profesional

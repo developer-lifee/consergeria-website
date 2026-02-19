@@ -12,21 +12,21 @@ import {
 const teamMembers = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-04%20at%203.40.40%20PM-5Y6XJMLW0mYUDZk6G70rVSORMrMdwK.jpeg",
-    alt: "Miembro del equipo ISA Service - Conserje profesional",
+    alt: "Miembro del equipo Multiservicios Sosa - Conserje profesional",
     name: "Carlos M.",
     role: "Conserje Senior",
     experience: "Especialista en propiedad horizontal",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-04%20at%203.40.40%20PM%20%282%29-JZtoib07zejVzMWv6wKs3w5zeOfHda.jpeg",
-    alt: "Miembro del equipo ISA Service - Conserje profesional",
+    alt: "Miembro del equipo Multiservicios Sosa - Conserje profesional",
     name: "Jorge R.",
     role: "Conserje Profesional",
     experience: "Atencion y gestion de zonas comunes",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-04%20at%203.40.40%20PM%20%281%29-0hDMM19SFg9KPCOi4Yhl2bWqGGKkIO.jpeg",
-    alt: "Miembro del equipo ISA Service - Conserje profesional",
+    alt: "Miembro del equipo Multiservicios Sosa - Conserje profesional",
     name: "Luis A.",
     role: "Conserje Profesional",
     experience: "Control de acceso y correspondencia",
@@ -101,11 +101,10 @@ export function TeamSection() {
                   className="pl-6 basis-full md:basis-1/3"
                 >
                   <div
-                    className={`relative rounded-2xl overflow-hidden border-2 transition-all duration-500 aspect-[3/4] ${
-                      current === i
+                    className={`relative rounded-2xl overflow-hidden border-2 transition-all duration-500 aspect-[3/4] ${current === i
                         ? "border-accent shadow-lg shadow-accent/10 scale-100"
                         : "border-border scale-[0.97] opacity-80"
-                    }`}
+                      }`}
                   >
                     <img
                       src={member.src}
@@ -155,11 +154,10 @@ export function TeamSection() {
                   key={i}
                   onClick={() => scrollTo(i)}
                   aria-label={`Ir al miembro ${i + 1}`}
-                  className={`rounded-full transition-all duration-300 ${
-                    current === i
+                  className={`rounded-full transition-all duration-300 ${current === i
                       ? "w-8 h-2.5 bg-accent"
                       : "w-2.5 h-2.5 bg-border hover:bg-muted-foreground"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -210,7 +208,7 @@ export function TeamSection() {
                 transparencia para proteger a la copropiedad y al trabajador.
               </p>
               <p className="mt-6 text-sm font-semibold text-primary-foreground">
-                ISA Service
+                Multiservicios Sosa
               </p>
               <p className="text-sm text-primary-foreground/50">
                 Conserjeria Profesional para Copropiedades
