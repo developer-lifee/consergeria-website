@@ -34,24 +34,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 flex items-center justify-center relative bg-white rounded-lg p-1">
-              <Image src="/logo.png" alt="Logo Multiservicios Sosa" fill className="object-contain" />
-            </div>
-            <div className="flex flex-col">
-              <span
-                className={`text-base font-bold leading-tight tracking-tight transition-colors ${
-                  scrolled ? "text-foreground" : "text-primary-foreground"
-                }`}
-              >
-                Multiservicios Sosa
-              </span>
-              <span
-                className={`text-[10px] uppercase tracking-widest leading-tight transition-colors ${
-                  scrolled ? "text-muted-foreground" : "text-primary-foreground/50"
-                }`}
-              >
-                Conserjeria profesional
-              </span>
+            <div className="w-48 h-12 flex items-center justify-start relative">
+              <Image src="/logotipo.png" alt="Logotipo Multiservicios Sosa" fill className="object-contain object-left" />
             </div>
           </a>
 
