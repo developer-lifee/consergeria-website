@@ -113,7 +113,7 @@ export function HeroSection() {
               {/* Floating stat top right */}
               <div className="absolute -top-4 -right-4 bg-accent rounded-xl shadow-2xl p-4">
                 <p className="text-2xl font-bold text-accent-foreground">10+</p>
-                <p className="text-xs text-accent-foreground/80">Anos de experiencia</p>
+                <p className="text-xs text-accent-foreground/80">Años de experiencia</p>
               </div>
             </div>
           </div>
