@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { Menu, X, Shield, Phone } from "lucide-react"
 
+import Image from "next/image"
+
 const links = [
   { label: "Servicios", href: "#servicios" },
   { label: "Marco Legal", href: "#marco-legal" },
@@ -32,8 +34,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-              <Shield className="w-5 h-5 text-accent-foreground" />
+            <div className="w-9 h-9 flex items-center justify-center relative bg-white rounded-lg p-1">
+              <Image src="/logo.png" alt="Logo Multiservicios Sosa" fill className="object-contain" />
             </div>
             <div className="flex flex-col">
               <span

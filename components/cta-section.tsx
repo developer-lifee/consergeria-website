@@ -72,7 +72,26 @@ export function CtaSection() {
               Complete el formulario y nos comunicaremos con usted en menos de 24 horas.
             </p>
 
-            <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-5" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get("name");
+              const email = formData.get("email");
+              const phone = formData.get("phone");
+              const property = formData.get("property");
+              const message = formData.get("message");
+              
+              const text = `Hola Multiservicios Sosa, solicito una cotizacion:
+Nombre: ${name}
+Correo: ${email}
+Telefono: ${phone}
+Copropiedad: ${property}
+Mensaje: ${message}`;
+              
+              const encodedText = encodeURIComponent(text);
+              const whatsappNumber = "573505403570"; // Multiservicios Sosa
+              window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
+            }}>
               <div>
                 <label
                   htmlFor="contact-name"
@@ -82,7 +101,9 @@ export function CtaSection() {
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
                   type="text"
+                  required
                   placeholder="Ingrese su nombre"
                   className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm transition-all"
                 />
@@ -98,7 +119,9 @@ export function CtaSection() {
                   </label>
                   <input
                     id="contact-email"
+                    name="email"
                     type="email"
+                    required
                     placeholder="correo@ejemplo.com"
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm transition-all"
                   />
@@ -112,7 +135,9 @@ export function CtaSection() {
                   </label>
                   <input
                     id="contact-phone"
+                    name="phone"
                     type="tel"
+                    required
                     placeholder="+57 300 000 0000"
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm transition-all"
                   />
@@ -128,7 +153,9 @@ export function CtaSection() {
                 </label>
                 <input
                   id="contact-property"
+                  name="property"
                   type="text"
+                  required
                   placeholder="Edificio / Conjunto residencial"
                   className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm transition-all"
                 />
@@ -143,7 +170,9 @@ export function CtaSection() {
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
                   rows={4}
+                  required
                   placeholder="Cuentenos sobre las necesidades de su copropiedad"
                   className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent text-sm resize-none transition-all"
                 />
@@ -153,7 +182,7 @@ export function CtaSection() {
                 type="submit"
                 className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-6 py-4 rounded-lg hover:opacity-90 transition-opacity text-sm w-full mt-2 shadow-lg shadow-accent/20"
               >
-                Enviar solicitud
+                Enviar por WhatsApp
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>

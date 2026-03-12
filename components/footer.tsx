@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,8 +8,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-                <Shield className="w-5 h-5 text-accent-foreground" />
+              <div className="w-9 h-9 flex items-center justify-center relative bg-white rounded-lg p-1">
+                <Image src="/logo.png" alt="Logo Multiservicios Sosa" fill className="object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-bold text-background leading-tight tracking-tight">
@@ -49,7 +49,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Legal */}
+      {/* Legal */}
           <div>
             <h4 className="font-semibold text-background mb-4 text-sm uppercase tracking-wider">
               Legal
@@ -59,14 +59,6 @@ export function Footer() {
               <p className="text-sm text-background/50">
                 Ley 1920 de 2018 - Vigilancia y Seguridad
               </p>
-              <a
-                href="https://isaservice.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-accent hover:text-accent/80 transition-colors"
-              >
-                isaservice.co
-              </a>
             </div>
           </div>
         </div>
