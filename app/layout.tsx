@@ -8,7 +8,7 @@ const _dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://multiserviciossosa.com.co/'),
-  title: 'Multiservicios Sosa | Servicio de Conserjeria Profesional',
+  title: 'Multiservicios Sosa | Servicio de Conserjería Profesional',
   description: 'Servicio profesional de conserjeria para copropiedades en Colombia. Personal capacitado, cumplimiento legal y confianza garantizada.',
   generator: 'v0.app',
 }

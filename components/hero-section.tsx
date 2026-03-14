@@ -31,13 +31,12 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight text-balance">
-              Conserjeria profesional para su copropiedad
+              Conserjería profesional para su copropiedad
             </h1>
 
             <p className="text-lg text-primary-foreground/75 leading-relaxed max-w-xl">
-              Personal capacitado, con funciones claramente definidas bajo el marco de la
-              Ley 675 de 2001. Seguridad, orden y confianza para su edificio o conjunto
-              residencial en Colombia.
+              Servicio profesional de conserjería para propiedad horizontal, con funciones administrativas y de atención en portería. 
+              Especialistas en Edificios residenciales, Conjuntos residenciales y Propiedad horizontal.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,7 +44,7 @@ export function HeroSection() {
                 href="#contacto"
                 className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity text-base shadow-lg shadow-accent/20"
               >
-                Solicitar cotizacion
+                Solicitar cotización
               </a>
               <a
                 href="#servicios"
@@ -60,7 +59,7 @@ export function HeroSection() {
               {[
                 { icon: CheckCircle, label: "Cumplimiento legal", value: "100%" },
                 { icon: Clock, label: "Disponibilidad", value: "24/7" },
-                { icon: Shield, label: "Copropiedades", value: "50+" },
+                { icon: Shield, label: "Más de 50 copropiedades", value: "50+" },
               ].map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
@@ -110,9 +109,8 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating stat top right */}
               <div className="absolute -top-4 -right-4 bg-accent rounded-xl shadow-2xl p-4">
-                <p className="text-2xl font-bold text-accent-foreground">10+</p>
+                <p className="text-2xl font-bold text-accent-foreground">Más de 10</p>
                 <p className="text-xs text-accent-foreground/80">Años de experiencia</p>
               </div>
             </div>

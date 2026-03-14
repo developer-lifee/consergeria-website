@@ -22,7 +22,7 @@ const teamMembers = [
     alt: "Miembro del equipo Multiservicios Sosa - Conserje profesional",
     name: "Jorge R.",
     role: "Conserje Profesional",
-    experience: "Atencion y gestion de zonas comunes",
+    experience: "Atención y gestión de zonas comunes",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-04%20at%203.40.40%20PM%20%281%29-0hDMM19SFg9KPCOi4Yhl2bWqGGKkIO.jpeg",
@@ -211,7 +211,7 @@ export function TeamSection() {
                 Multiservicios Sosa
               </p>
               <p className="text-sm text-primary-foreground/50">
-                Conserjeria Profesional para Copropiedades
+                Conserjería Profesional para Copropiedades
               </p>
             </div>
           </div>

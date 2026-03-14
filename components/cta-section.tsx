@@ -10,15 +10,14 @@ export function CtaSection() {
           {/* Left content */}
           <div className="lg:sticky lg:top-28">
             <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">
-              Contactenos
+              Contáctenos
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground text-balance mb-6">
-              {'La tranquilidad de su copropiedad comienza aqui'}
+              {'La tranquilidad de su copropiedad comienza aquí'}
             </h2>
             <p className="text-primary-foreground/75 leading-relaxed text-lg mb-10">
-              Solicite una cotizacion personalizada para el servicio de conserjeria de su
-              edificio o conjunto residencial. Nos adaptamos a las necesidades especificas
-              de su copropiedad.
+              Solicite una cotización personalizada para el servicio de conserjería de su
+              edificio o conjunto residencial. Enviamos propuesta económica en menos de 24 horas.
             </p>
 
             <div className="flex flex-col gap-5">
@@ -26,7 +25,7 @@ export function CtaSection() {
                 {
                   icon: Phone,
                   label: "Telefono",
-                  value: "Contactenos para una asesoria",
+                  value: "Contáctenos para una asesoría",
                   href: "#",
                 },
                 {
@@ -37,8 +36,8 @@ export function CtaSection() {
                 },
                 {
                   icon: MapPin,
-                  label: "Ubicacion",
-                  value: "Calle 8 Sur # 4-35, Colombia",
+                  label: "Ubicación",
+                  value: "📍 Bogotá D.C.",
                   href: "#",
                 },
               ].map((contact) => (
@@ -66,7 +65,7 @@ export function CtaSection() {
           {/* Right - CTA Card */}
           <div className="bg-card rounded-2xl p-8 lg:p-10 shadow-2xl border border-border">
             <h3 className="text-2xl font-bold text-card-foreground mb-2">
-              Solicite su cotizacion
+              Solicite su cotización
             </h3>
             <p className="text-muted-foreground mb-8">
               Complete el formulario y nos comunicaremos con usted en menos de 24 horas.
@@ -81,7 +80,7 @@ export function CtaSection() {
               const property = formData.get("property");
               const message = formData.get("message");
               
-              const text = `Hola Multiservicios Sosa, solicito una cotizacion:
+              const text = `Hola Multiservicios Sosa, solicito una cotización:
 Nombre: ${name}
 Correo: ${email}
 Telefono: ${phone}
@@ -115,7 +114,7 @@ Mensaje: ${message}`;
                     htmlFor="contact-email"
                     className="text-sm font-medium text-card-foreground mb-1.5 block"
                   >
-                    Correo electronico
+                    Correo electrónico
                   </label>
                   <input
                     id="contact-email"
@@ -131,7 +130,7 @@ Mensaje: ${message}`;
                     htmlFor="contact-phone"
                     className="text-sm font-medium text-card-foreground mb-1.5 block"
                   >
-                    Telefono
+                    Teléfono
                   </label>
                   <input
                     id="contact-phone"

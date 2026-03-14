@@ -2,40 +2,40 @@ import { Mail, DoorOpen, ClipboardList, Users, ShieldCheck, FileText } from "luc
 
 const services = [
   {
-    icon: Mail,
-    title: "Recepcion de correspondencia",
+    icon: ShieldCheck,
+    title: "Cumplimiento legal laboral",
     description:
-      "Gestion organizada de paquetes, cartas y documentos para cada residente del edificio.",
-  },
-  {
-    icon: DoorOpen,
-    title: "Control de acceso a zonas comunes",
-    description:
-      "Apertura y cierre de puertas comunes, asegurando el orden y la seguridad del edificio.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Mantenimiento del orden",
-    description:
-      "Supervision constante de areas comunes para mantener la limpieza y el buen estado del inmueble.",
+      "Garantizamos el cumplimiento total de todas las normas laborales colombianas para nuestro personal.",
   },
   {
     icon: Users,
-    title: "Atencion a residentes y visitantes",
+    title: "Reemplazos por incapacidad",
     description:
-      "Trato profesional y cordial para todos los miembros de la comunidad y sus invitados.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Reporte de novedades",
-    description:
-      "Informes detallados y oportunos al administrador sobre cualquier situacion relevante.",
+      "Contamos con personal de reserva para asegurar la continuidad del servicio en caso de incapacidades.",
   },
   {
     icon: FileText,
-    title: "Cumplimiento normativo",
+    title: "Personal verificado",
     description:
-      "Funciones definidas en manual interno y contrato, alineadas con la Ley 675 de 2001.",
+      "Riguroso proceso de selección y verificación de antecedentes para su total tranquilidad.",
+  },
+  {
+    icon: Mail,
+    title: "Capacitación permanente",
+    description:
+      "Nuestro personal recibe formación constante en servicio al cliente y protocolos de conserjería.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Manual de funciones definido",
+    description:
+      "Cada conserje cuenta con un manual de funciones específico adaptado a las necesidades de su copropiedad.",
+  },
+  {
+    icon: DoorOpen,
+    title: "Supervisión del servicio",
+    description:
+      "Realizamos visitas constantes de supervisión para garantizar la excelencia en la prestación del servicio.",
   },
 ]
 

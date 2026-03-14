@@ -16,20 +16,20 @@ export function Footer() {
                   Multiservicios Sosa
                 </span>
                 <span className="text-[10px] text-background/40 uppercase tracking-widest leading-tight">
-                  Conserjeria profesional
+                  NIT 900.263.054-0 | Conserjería profesional
                 </span>
               </div>
             </div>
             <p className="text-background/50 text-sm leading-relaxed max-w-xs">
-              Servicio profesional de conserjeria para copropiedades en Colombia,
-              con total cumplimiento de la normativa vigente.
+              Empresa colombiana especializada en servicios de conserjería para propiedad horizontal.
+              Enviamos propuesta económica en menos de 24 horas.
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h4 className="font-semibold text-background mb-4 text-sm uppercase tracking-wider">
-              Navegacion
+              Navegación
             </h4>
             <div className="flex flex-col gap-3">
               {[
@@ -68,7 +68,7 @@ export function Footer() {
             {`© ${new Date().getFullYear()} Multiservicios Sosa. Todos los derechos reservados.`}
           </p>
           <p className="text-xs text-background/40">
-            Colombia - Servicio de conserjeria profesional
+            📍 Bogotá D.C. - Servicio de conserjería profesional
           </p>
         </div>
       </div>

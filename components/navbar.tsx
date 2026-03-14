@@ -50,7 +50,7 @@ export function Navbar() {
                   scrolled ? "text-muted-foreground" : "text-primary-foreground/50"
                 }`}
               >
-                Conserjeria profesional
+                Conserjería profesional
               </span>
             </div>
           </a>

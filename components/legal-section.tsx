@@ -1,4 +1,4 @@
-import { Scale, AlertTriangle, FileCheck, BookOpen } from "lucide-react"
+import { Scale, AlertTriangle, FileCheck, BookOpen, Shield } from "lucide-react"
 
 const legalPoints = [
   {
@@ -14,16 +14,16 @@ const legalPoints = [
       "Es fundamental diferenciar entre conserjes y vigilantes. Mientras los conserjes se dedican a tareas administrativas, de mantenimiento y atencion al publico, los vigilantes estan amparados bajo la Ley de Vigilancia y Seguridad Privada (Ley 1920 de 2018) y requieren certificacion de la Superintendencia de Vigilancia.",
   },
   {
-    icon: FileCheck,
-    title: "Limites funcionales legales",
+    icon: Shield,
+    title: "Servicio exclusivo de conserjería",
     description:
-      "Un conserje no puede realizar actividades de vigilancia o seguridad privada que impliquen portar armas, hacer rondas o controlar acceso con camaras si no tiene certificacion de vigilancia. Delegarle estas tareas podria llevar a la copropiedad a enfrentar sanciones.",
+      "Nuestro personal presta exclusivamente servicios de conserjería y apoyo administrativo en portería. No realizamos actividades propias de vigilancia o seguridad privada.",
   },
   {
     icon: BookOpen,
     title: "Manual de funciones y contrato claro",
     description:
-      "Para evitar conflictos, es esencial elaborar un contrato donde se detallen funciones, jornada laboral y condiciones de trabajo. Ademas, es recomendable actualizar el reglamento de propiedad horizontal para incluir una descripcion detallada de los roles del conserje.",
+      "Para evitar conflictos, es esencial elaborar un contrato donde se detallen funciones, jornada laboral y condiciones de trabajo. Además, es recomendable actualizar el reglamento de propiedad horizontal para incluir una descripción detallada de los roles del conserje.",
   },
 ]
 
@@ -41,8 +41,8 @@ export function LegalSection() {
               {'Servicio con respaldo juridico'}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Conocemos la normativa colombiana a profundidad. Nuestro servicio esta
-              disenado para proteger tanto a la copropiedad como al trabajador.
+              Conocemos la normativa colombiana a profundidad. Nuestro servicio está
+              diseñado para proteger tanto a la copropiedad como al trabajador.
             </p>
 
             {/* Highlight box */}
@@ -56,7 +56,7 @@ export function LegalSection() {
                 </p>
               </div>
               <p className="text-primary-foreground/75 text-sm leading-relaxed">
-                Si se asignan labores de vigilancia a un conserje sin certificacion, la
+                Si se asignan labores de vigilancia a un conserje sin certificación, la
                 copropiedad puede enfrentar sanciones. Con Multiservicios Sosa, tiene la
                 tranquilidad de un servicio 100% legal.
               </p>
