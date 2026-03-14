@@ -1,29 +1,35 @@
-import { Scale, AlertTriangle, FileCheck, BookOpen, Shield } from "lucide-react"
+import { Scale, AlertTriangle, FileCheck, BookOpen, Shield, Users, Mail } from "lucide-react"
 
 const legalPoints = [
   {
-    icon: Scale,
-    title: "Marco normativo vigente",
-    description:
-      "La figura del conserje en la propiedad horizontal es completamente legal en Colombia. Aunque el termino no se encuentra explicitamente regulado en la Ley 675 de 2001, su inclusion en el regimen de propiedad horizontal se enmarca en las facultades de las copropiedades para organizar su esquema de aseo y mantenimiento.",
+    icon: Users,
+    title: "Atención a residentes y visitantes",
+    description: "Trato profesional y cordial para todos los miembros de la comunidad y sus invitados.",
   },
   {
-    icon: AlertTriangle,
-    title: "Conserje vs. Vigilante: diferencias clave",
-    description:
-      "Es fundamental diferenciar entre conserjes y vigilantes. Mientras los conserjes se dedican a tareas administrativas, de mantenimiento y atencion al publico, los vigilantes estan amparados bajo la Ley de Vigilancia y Seguridad Privada (Ley 1920 de 2018) y requieren certificacion de la Superintendencia de Vigilancia.",
+    icon: Mail,
+    title: "Registro de correspondencia y encomiendas",
+    description: "Gestión organizada de paquetes, cartas y documentos para cada residente del edificio.",
   },
   {
     icon: Shield,
-    title: "Servicio exclusivo de conserjería",
-    description:
-      "Nuestro personal presta exclusivamente servicios de conserjería y apoyo administrativo en portería. No realizamos actividades propias de vigilancia o seguridad privada.",
+    title: "Control administrativo de visitantes",
+    description: "Registro y control de ingreso y salida de visitantes según protocolos del edificio.",
   },
   {
-    icon: BookOpen,
-    title: "Manual de funciones y contrato claro",
-    description:
-      "Para evitar conflictos, es esencial elaborar un contrato donde se detallen funciones, jornada laboral y condiciones de trabajo. Además, es recomendable actualizar el reglamento de propiedad horizontal para incluir una descripción detallada de los roles del conserje.",
+    icon: FileCheck,
+    title: "Apoyo logístico en portería",
+    description: "Funciones de apoyo administrativo y logístico para el correcto funcionamiento de la portería.",
+  },
+  {
+    icon: Scale,
+    title: "Supervisión básica de áreas comunes",
+    description: "Recorridos periódicos para verificar el estado y buen uso de las zonas comunes.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Reporte de novedades",
+    description: "Informes detallados y oportunos a la administración sobre cualquier situación relevante.",
   },
 ]
 
@@ -41,8 +47,10 @@ export function LegalSection() {
               {'Servicio con respaldo juridico'}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Conocemos la normativa colombiana a profundidad. Nuestro servicio está
-              diseñado para proteger tanto a la copropiedad como al trabajador.
+              MULTISERVICIOS SOSA presta servicios de conserjería para propiedad horizontal, orientados a la atención en portería, control administrativo de visitantes y apoyo operativo en edificios y conjuntos residenciales.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Nuestros servicios se desarrollan conforme a lo establecido en la Ley 675 de 2001 (Régimen de Propiedad Horizontal) y demás normas aplicables en Colombia.
             </p>
 
             {/* Highlight box */}
