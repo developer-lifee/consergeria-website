@@ -31,8 +31,8 @@ export function CtaSection() {
                 {
                   icon: Mail,
                   label: "Correo",
-                  value: "info@multiserviciossosa.co",
-                  href: "mailto:info@multiserviciossosa.co",
+                  value: "multiserviciossosa@gmail.com",
+                  href: "mailto:multiserviciososa@gmail.com",
                 },
                 {
                   icon: MapPin,
@@ -79,14 +79,14 @@ export function CtaSection() {
               const phone = formData.get("phone");
               const property = formData.get("property");
               const message = formData.get("message");
-              
+
               const text = `Hola Multiservicios Sosa, solicito una cotización:
 Nombre: ${name}
 Correo: ${email}
 Telefono: ${phone}
 Copropiedad: ${property}
 Mensaje: ${message}`;
-              
+
               const encodedText = encodeURIComponent(text);
               const whatsappNumber = "573505403570"; // Multiservicios Sosa
               window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
