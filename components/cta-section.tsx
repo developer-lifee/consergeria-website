@@ -25,14 +25,14 @@ export function CtaSection() {
                 {
                   icon: Phone,
                   label: "Telefono",
-                  value: "Contáctenos para una asesoría",
+                  value: "57 350 5403570",
                   href: "#",
                 },
                 {
                   icon: Mail,
                   label: "Correo",
-                  value: "multiserviciossosa@gmail.com",
-                  href: "mailto:multiserviciososa@gmail.com",
+                  value: "multiserviciossosaeu@gmail.com",
+                  href: "mailto:multiserviciossosaeu@gmail.com",
                 },
                 {
                   icon: MapPin,
