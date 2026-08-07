@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import { 
   ShieldAlert, 
   Lock, 
@@ -15,10 +16,8 @@ import {
   Layout,
   Star
 } from "lucide-react";
-import Image from "next/image";
 
 export function SuspendedPuzzlePage() {
-  const [hoveredPiece, setHoveredPiece] = useState<number | null>(null);
 
   const domainOnlyMsg = encodeURIComponent("quiero la oferta del dominio https://multiserviciossosa.com.co/ por solo 100.000 pesos");
   const domainWithSiteMsg = encodeURIComponent("quiero la oferta del dominio https://multiserviciossosa.com.co/ con una página totalmente nueva por solo 200.000 pesos");
@@ -36,7 +35,7 @@ export function SuspendedPuzzlePage() {
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none z-0" />
       <div className="fixed top-1/3 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none z-0" />
 
-      {/* Subtle Grid Texture */}
+      {/* Grid Texture */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] z-0" />
 
       {/* HEADER BANNER */}
@@ -62,7 +61,7 @@ export function SuspendedPuzzlePage() {
               href={waCancelUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md hover:scale-105 active:scale-95"
+              className="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md hover:scale-105 active:scale-95"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-slate-950" />
               <span>Titular: Regularizar</span>
@@ -72,7 +71,7 @@ export function SuspendedPuzzlePage() {
               href={waDomainWithSiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md hover:scale-105 active:scale-95"
+              className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md hover:scale-105 active:scale-95"
             >
               <Tag className="w-3.5 h-3.5 fill-slate-950" />
               <span>Oferta $200.000</span>
@@ -82,11 +81,11 @@ export function SuspendedPuzzlePage() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
+      {/* HERO TITLE SECTION */}
       <section className="relative z-10 max-w-5xl w-full mx-auto px-4 pt-10 pb-6 text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/40 text-amber-400 text-xs font-semibold backdrop-blur-md">
           <Puzzle className="w-4 h-4 text-amber-400" />
-          <span>Estructura Web Desensamblada en Rompecabezas</span>
+          <span>Estructura Web Fragmentada en Piezas de Rompecabezas</span>
         </div>
 
         <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
@@ -97,15 +96,15 @@ export function SuspendedPuzzlePage() {
         </h1>
 
         <p className="max-w-2xl mx-auto text-slate-400 text-sm md:text-base leading-relaxed">
-          Las vistas y módulos principales del sitio han sido fragmentados en piezas independientes. Explora las piezas activas y las ofertas de adquisición disponibles.
+          Las secciones oficiales del sitio han sido desarmadas. Explora los fragmentos del sitio web original y las ofertas disponibles.
         </p>
       </section>
 
-      {/* MAIN PUZZLE TILES GRID */}
+      {/* MAIN CONTAINER */}
       <main className="relative z-10 max-w-6xl w-full mx-auto px-4 py-6 space-y-12">
         
         {/* ========================================================
-            OFICINAS Y OFERTAS DE ADQUISICIÓN DESTACADAS
+            BLOQUES DE OFERTAS Y ADQUISICIÓN DESTACADAS
            ======================================================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -131,7 +130,7 @@ export function SuspendedPuzzlePage() {
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-                Adquiere el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> por un pago único de oportunidad.
+                Adquiere el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> para tu propio proyecto.
               </p>
 
               <div className="p-3 rounded-2xl bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-between">
@@ -153,11 +152,11 @@ export function SuspendedPuzzlePage() {
             </div>
           </div>
 
-          {/* OFERTA 2 (NUEVA): DOMINIO + PÁGINA WEB NUEVA ($200.000 COP) */}
+          {/* OFERTA 2: DOMINIO + PÁGINA WEB NUEVA ($200.000 COP) */}
           <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-amber-950/30 backdrop-blur-xl border-2 border-amber-500/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl transition-all duration-500 hover:border-amber-400 hover:-translate-y-1">
             <div className="absolute -top-3 right-6 px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs rounded-full shadow-lg flex items-center gap-1">
               <Star className="w-3.5 h-3.5 fill-slate-950" />
-              <span>OFERTA RECOMENDADA</span>
+              <span>OFERTA DESTACADA</span>
             </div>
 
             <div className="space-y-4">
@@ -170,16 +169,16 @@ export function SuspendedPuzzlePage() {
                   Dominio + Página Web Totalmente Nueva
                 </h3>
                 <p className="text-xs text-amber-400 font-medium uppercase tracking-wider mt-0.5">
-                  Paquete Completo Todo Incluido
+                  Paquete Completo Diseñado a tu Medida
                 </p>
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-                Obtén el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> junto con un sitio web 100% personalizado diseñado a tu medida desde cero.
+                Obtén el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> junto con un sitio web 100% nuevo diseñado para tu negocio.
               </p>
 
               <div className="p-3 rounded-2xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-between">
-                <span className="text-xs text-slate-300">Dominio + Sitio Nuevo:</span>
+                <span className="text-xs text-slate-300">Dominio + Página Nueva:</span>
                 <span className="text-xl font-black text-amber-400 tracking-tight">$200.000 COP</span>
               </div>
             </div>
@@ -200,151 +199,169 @@ export function SuspendedPuzzlePage() {
         </div>
 
         {/* ========================================================
-            CAPTURAS / PANTALLAZOS DEL SITIO EN PIEZAS DE ROMPECABEZAS
+            PIEZAS DEL ROMPECABEZAS CON PANTALLAZOS REALES DEL SITIO
            ======================================================== */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div className="flex items-center justify-between px-2">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Puzzle className="w-5 h-5 text-amber-400" />
-              <span>Piezas y Capturas del Sitio Original</span>
+              <span>Piezas Desensambladas del Sitio Original</span>
             </h3>
-            <span className="text-xs text-slate-400">Piezas desensambladas</span>
+            <span className="text-xs text-slate-400">Capturas oficiales</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            {/* PIEZA 1: PANTALLAZO ENCABEZADO Y HERO */}
-            <div className="relative group bg-slate-900/90 border-2 border-slate-800 rounded-3xl p-4 shadow-xl transition-all hover:border-slate-700">
+            {/* PIEZA 1: PANTALLAZO HERO & NAVEGACIÓN */}
+            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[-0.5deg]">
+              {/* Puzzle Notch (Top) */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-emerald-500/30 border-t-2 border-x-2 border-emerald-500/50 rounded-t-lg backdrop-blur-md" />
+
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-[11px] font-black uppercase text-emerald-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #1: INICIO & IDENTIDAD
+                  PIEZA #1: HERO & INICIO
                 </span>
-                <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">CAPTURA</span>
+                <span className="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800 font-mono">EN PIEZA</span>
               </div>
 
-              {/* MOCKUP CAPTURA HERO */}
-              <div className="relative h-44 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex flex-col justify-between p-4 bg-gradient-to-br from-slate-900 to-slate-950">
-                <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-[10px] font-bold text-cyan-400">MS</div>
-                    <span className="text-xs font-bold text-white">Multiservicios Sosa</span>
-                  </div>
-                  <span className="text-[9px] bg-cyan-950 text-cyan-400 px-1.5 py-0.5 rounded border border-cyan-800">CONSERJERÍA</span>
-                </div>
-
-                <div className="space-y-1 my-auto">
-                  <h5 className="text-sm font-bold text-slate-100">Servicio de Conserjería Profesional</h5>
-                  <p className="text-[11px] text-slate-400 leading-tight">Atención en portería, control de acceso y apoyo operativo para conjuntos y edificios.</p>
-                </div>
-
-                <div className="flex items-center gap-2 pt-2 border-t border-slate-800/60">
-                  <span className="text-[9px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">✓ Personal Certificado</span>
-                </div>
+              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
+                <img 
+                  src="/screenshots/shot_hero.png" 
+                  alt="Pieza 1 - Conserjería profesional para su copropiedad"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
               </div>
+
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Sección principal de presentación de Multiservicios Sosa.
+              </p>
             </div>
 
             {/* PIEZA 2: COMPONENTE BLOQUEADO */}
-            <div className="relative group bg-slate-950/90 border-2 border-dashed border-red-500/40 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 shadow-xl">
-              <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
-                <Lock className="w-6 h-6" />
+            <div className="relative group bg-slate-950/90 border-2 border-dashed border-red-500/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-xl rotate-[0.5deg]">
+              {/* Puzzle Notch (Right) */}
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-10 bg-red-500/30 border-r-2 border-y-2 border-red-500/50 rounded-r-lg backdrop-blur-md" />
+
+              <div className="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
+                <Lock className="w-7 h-7" />
               </div>
 
               <div>
-                <span className="text-[11px] font-extrabold uppercase text-red-400">PIEZA #2: COTIZADOR VIVO</span>
-                <h5 className="text-sm font-bold text-white">[ Pieza Bloqueada ]</h5>
-                <p className="text-xs text-slate-400 mt-1">Calculador de tarifas y turnos de portería fuera de servicio.</p>
-              </div>
-            </div>
-
-            {/* PIEZA 3: PANTALLAZO SERVICIOS */}
-            <div className="relative group bg-slate-900/90 border-2 border-slate-800 rounded-3xl p-4 shadow-xl transition-all hover:border-slate-700">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-                <span className="text-[11px] font-black uppercase text-cyan-400 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #3: PORTAFOLIO DE SERVICIOS
-                </span>
-                <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">CAPTURA</span>
-              </div>
-
-              {/* MOCKUP CAPTURA SERVICIOS */}
-              <div className="relative h-44 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 p-3 space-y-2 bg-gradient-to-br from-slate-900 to-slate-950">
-                <div className="text-[11px] font-bold text-cyan-400 uppercase">Funciones Claras</div>
-                <div className="grid grid-cols-2 gap-2 text-[10px]">
-                  <div className="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                    🏢 Portería 24/7
-                  </div>
-                  <div className="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                    📋 Visitantes
-                  </div>
-                  <div className="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                    📦 Correspondencia
-                  </div>
-                  <div className="p-2 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                    🛡️ Rondas
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* PIEZA 4: COMPONENTE BLOQUEADO */}
-            <div className="relative group bg-slate-950/90 border-2 border-dashed border-amber-500/40 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 shadow-xl">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                <Lock className="w-6 h-6" />
-              </div>
-
-              <div>
-                <span className="text-[11px] font-extrabold uppercase text-amber-400">PIEZA #4: MÓDULO DE RESERVAS</span>
-                <h5 className="text-sm font-bold text-white">[ Pieza Desconectada ]</h5>
-                <p className="text-xs text-slate-400 mt-1">Módulo de agenda y contratación de conserjes suspendido.</p>
-              </div>
-            </div>
-
-            {/* PIEZA 5: PANTALLAZO EQUIPO & LEGAL */}
-            <div className="relative group bg-slate-900/90 border-2 border-slate-800 rounded-3xl p-4 shadow-xl transition-all hover:border-slate-700">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-                <span className="text-[11px] font-black uppercase text-indigo-400 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #5: EQUIPO & MARCO LEGAL
-                </span>
-                <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">CAPTURA</span>
-              </div>
-
-              {/* MOCKUP CAPTURA LEGAL */}
-              <div className="relative h-44 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 p-3 space-y-2 bg-gradient-to-br from-slate-900 to-slate-950">
-                <div className="text-[11px] font-bold text-indigo-400">Cumplimiento Normativo PH</div>
-                <p className="text-[10px] text-slate-400 leading-tight">
-                  Servicios adaptados a la reglamentación de propiedad horizontal en Colombia.
+                <span className="text-[11px] font-extrabold uppercase text-red-400">PIEZA #2: COTIZADOR EN VIVO</span>
+                <h5 className="text-base font-bold text-white mt-1">[ Componente Bloqueado ]</h5>
+                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                  Calculador automático de tarifas de portería y turnos residenciales deshabilitado.
                 </p>
-                <div className="p-2 rounded bg-indigo-950/40 border border-indigo-500/20 text-[10px] text-indigo-300 font-medium">
-                  ✓ Personal capacitado sin vinculación directa para la copropiedad.
-                </div>
-              </div>
-            </div>
-
-            {/* PIEZA 6: TITULAR ACCIÓN */}
-            <div className="relative group bg-slate-900/90 border-2 border-amber-500/40 rounded-3xl p-4 flex flex-col justify-between shadow-xl">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-2">
-                <span className="text-[11px] font-black uppercase text-amber-400 flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5" />
-                  PIEZA #6: ÁREA DEL TITULAR
-                </span>
-              </div>
-
-              <div className="space-y-2 my-auto">
-                <h5 className="text-sm font-bold text-white"> Regularizar o Cancelar Servicio</h5>
-                <p className="text-xs text-slate-400">Ponte en contacto para poner al día tu saldo o dar de baja el proyecto.</p>
               </div>
 
               <a
                 href={waCancelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 transition-all mt-2"
+                className="w-full mt-2 py-2 px-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
               >
-                <MessageCircle className="w-3.5 h-3.5 fill-slate-950" />
-                <span>Contactar a Soporte</span>
+                <Zap className="w-3.5 h-3.5 text-red-400" />
+                <span>Desbloquear Pieza #2</span>
               </a>
+            </div>
+
+            {/* PIEZA 3: PANTALLAZO NUESTROS SERVICIOS */}
+            <div className="relative group bg-slate-900/90 border-2 border-cyan-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-cyan-400 hover:-translate-y-1 rotate-[0.5deg]">
+              {/* Puzzle Notch (Bottom) */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-cyan-500/30 border-b-2 border-x-2 border-cyan-500/50 rounded-b-lg backdrop-blur-md" />
+
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                <span className="text-[11px] font-black uppercase text-cyan-400 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  PIEZA #3: NUESTROS SERVICIOS
+                </span>
+                <span className="text-[10px] bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-800 font-mono">EN PIEZA</span>
+              </div>
+
+              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
+                <img 
+                  src="/screenshots/shot_services.png" 
+                  alt="Pieza 3 - Funciones claras, servicio confiable"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Funciones claras y reemplazos por incapacidad en portería.
+              </p>
+            </div>
+
+            {/* PIEZA 4: PANTALLAZO MARCO LEGAL */}
+            <div className="relative group bg-slate-900/90 border-2 border-indigo-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-indigo-400 hover:-translate-y-1 rotate-[-0.5deg]">
+              {/* Puzzle Notch (Left) */}
+              <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-4 h-10 bg-indigo-500/30 border-l-2 border-y-2 border-indigo-500/50 rounded-l-lg backdrop-blur-md" />
+
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                <span className="text-[11px] font-black uppercase text-indigo-400 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  PIEZA #4: MARCO LEGAL & LEY 675
+                </span>
+                <span className="text-[10px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-800 font-mono">EN PIEZA</span>
+              </div>
+
+              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
+                <img 
+                  src="/screenshots/shot_legal.png" 
+                  alt="Pieza 4 - Servicio con respaldo jurídico Ley 675"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Cumplimiento normativo y régimen de propiedad horizontal.
+              </p>
+            </div>
+
+            {/* PIEZA 5: PANTALLAZO EQUIPO DE TRABAJO */}
+            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[0.5deg]">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                <span className="text-[11px] font-black uppercase text-emerald-400 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  PIEZA #5: EQUIPO & CONSERJES
+                </span>
+                <span className="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800 font-mono">EN PIEZA</span>
+              </div>
+
+              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
+                <img 
+                  src="/screenshots/shot_team1.png" 
+                  alt="Pieza 5 - Profesionales comprometidos con su copropiedad"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Personal capacitado e identificado de Multiservicios Sosa.
+              </p>
+            </div>
+
+            {/* PIEZA 6: PANTALLAZO CONSERJES SENIOR & TESTIMONIO */}
+            <div className="relative group bg-slate-900/90 border-2 border-amber-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-amber-400 hover:-translate-y-1 rotate-[-0.5deg]">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                <span className="text-[11px] font-black uppercase text-amber-400 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  PIEZA #6: PERFILES VERIFICADOS
+                </span>
+                <span className="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-800 font-mono">EN PIEZA</span>
+              </div>
+
+              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
+                <img 
+                  src="/screenshots/shot_team2.png" 
+                  alt="Pieza 6 - Conserjes senior verificados"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Fichas de verificación de conserjes e historial de servicio.
+              </p>
             </div>
 
           </div>
@@ -359,7 +376,7 @@ export function SuspendedPuzzlePage() {
             Atención Directa vía WhatsApp: <strong className="text-white font-mono">+57 311 858 7975</strong>
           </p>
           <p className="text-[11px] text-slate-500">
-            Sin pasarelas de pago intermedias. La entrega de ofertas o regularizaciones se gestiona vía WhatsApp oficial.
+            Sin pasarelas de pago intermedias. La entrega de ofertas o regularizaciones se gestiona exclusivamente vía WhatsApp oficial.
           </p>
         </div>
       </footer>
