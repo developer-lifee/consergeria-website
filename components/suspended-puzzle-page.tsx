@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { 
   ShieldAlert, 
   Lock, 
@@ -14,7 +13,8 @@ import {
   Zap,
   Globe,
   Layout,
-  Star
+  Star,
+  Scissors
 } from "lucide-react";
 
 export function SuspendedPuzzlePage() {
@@ -30,6 +30,18 @@ export function SuspendedPuzzlePage() {
   return (
     <div className="relative min-h-screen bg-[#07090e] text-slate-100 flex flex-col items-center justify-start overflow-x-hidden font-sans select-none pb-20">
       
+      {/* SVG PUZZLE PIECE CLIP PATH DEFINITIONS */}
+      <svg className="absolute w-0 h-0 pointer-events-none">
+        <defs>
+          <clipPath id="puzzle-clip-top-right" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 L 0.4,0 C 0.4,0.06 0.48,0.06 0.48,0 C 0.48,-0.06 0.56,-0.06 0.56,0 C 0.56,0.06 0.64,0.06 0.64,0 L 1,0 L 1,0.4 C 0.94,0.4 0.94,0.48 1,0.48 C 1.06,0.48 1.06,0.56 1,0.56 C 0.94,0.56 0.94,0.64 1,0.64 L 1,1 L 0,1 Z" />
+          </clipPath>
+          <clipPath id="puzzle-clip-bottom-left" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 L 1,0 L 1,1 L 0.6,1 C 0.6,0.94 0.52,0.94 0.52,1 C 0.52,1.06 0.44,1.06 0.44,1 C 0.44,0.94 0.36,0.94 0.36,1 L 0,1 L 0,0.6 C 0.06,0.6 0.06,0.52 0,0.52 C -0.06,0.52 -0.06,0.44 0,0.44 C 0.06,0.44 0.06,0.36 0,0.36 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       {/* Background Neon Glows */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-red-600/10 rounded-full blur-[160px] pointer-events-none z-0" />
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none z-0" />
@@ -51,7 +63,7 @@ export function SuspendedPuzzlePage() {
                 <span className="text-xs font-black uppercase tracking-wider text-red-400">Servicio Suspendido por No Pago</span>
               </div>
               <p className="text-xs text-slate-300 font-medium">
-                El dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> se encuentra desarmado en piezas por obligación pendiente.
+                El sitio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> ha sido desinstalado y recortado en piezas.
               </p>
             </div>
           </div>
@@ -84,19 +96,19 @@ export function SuspendedPuzzlePage() {
       {/* HERO TITLE SECTION */}
       <section className="relative z-10 max-w-5xl w-full mx-auto px-4 pt-10 pb-6 text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/40 text-amber-400 text-xs font-semibold backdrop-blur-md">
-          <Puzzle className="w-4 h-4 text-amber-400" />
-          <span>Estructura Web Fragmentada en Piezas de Rompecabezas</span>
+          <Scissors className="w-4 h-4 text-amber-400" />
+          <span>Pantallazos Recortados & Descompletados</span>
         </div>
 
         <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-          Página No Disponible <br />
+          Página Desarmada por <br />
           <span className="bg-gradient-to-r from-red-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">
-            por Falta de Pago
+            Falta de Pago del 50%
           </span>
         </h1>
 
         <p className="max-w-2xl mx-auto text-slate-400 text-sm md:text-base leading-relaxed">
-          Las secciones oficiales del sitio han sido desarmadas. Explora los fragmentos del sitio web original y las ofertas disponibles.
+          Los pantallazos del sitio original han sido <strong className="text-slate-200">recortados e incompletos</strong>. Varias piezas de la imagen fueron retiradas debido a la deuda pendiente.
         </p>
       </section>
 
@@ -104,7 +116,7 @@ export function SuspendedPuzzlePage() {
       <main className="relative z-10 max-w-6xl w-full mx-auto px-4 py-6 space-y-12">
         
         {/* ========================================================
-            BLOQUES DE OFERTAS Y ADQUISICIÓN DESTACADAS
+            BLOQUES DE OFERTAS DESTACADAS
            ======================================================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -130,7 +142,7 @@ export function SuspendedPuzzlePage() {
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-                Adquiere el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> para tu propio proyecto.
+                Adquiere el dominio <strong className="text-white font-mono">multiserviciossosa.com.co</strong> por un pago único de oportunidad.
               </p>
 
               <div className="p-3 rounded-2xl bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-between">
@@ -156,7 +168,7 @@ export function SuspendedPuzzlePage() {
           <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-amber-950/30 backdrop-blur-xl border-2 border-amber-500/60 rounded-3xl p-6 flex flex-col justify-between shadow-2xl transition-all duration-500 hover:border-amber-400 hover:-translate-y-1">
             <div className="absolute -top-3 right-6 px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs rounded-full shadow-lg flex items-center gap-1">
               <Star className="w-3.5 h-3.5 fill-slate-950" />
-              <span>OFERTA DESTACADA</span>
+              <span>OFERTA RECOMENDADA</span>
             </div>
 
             <div className="space-y-4">
@@ -199,48 +211,57 @@ export function SuspendedPuzzlePage() {
         </div>
 
         {/* ========================================================
-            PIEZAS DEL ROMPECABEZAS CON PANTALLAZOS REALES DEL SITIO
+            TABLERO DE ROMPECABEZAS CON PANTALLAZOS RECOR TADOS / INCOMPLETOS
            ======================================================== */}
         <div className="space-y-6">
           <div className="flex items-center justify-between px-2">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Puzzle className="w-5 h-5 text-amber-400" />
-              <span>Piezas Desensambladas del Sitio Original</span>
+              <span>Piezas Descompletadas del Sitio Web</span>
             </h3>
-            <span className="text-xs text-slate-400">Capturas oficiales</span>
+            <span className="text-xs text-red-400 font-mono">Imágenes recortadas por no pago</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            {/* PIEZA 1: PANTALLAZO HERO & NAVEGACIÓN */}
-            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[-0.5deg]">
-              {/* Puzzle Notch (Top) */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-emerald-500/30 border-t-2 border-x-2 border-emerald-500/50 rounded-t-lg backdrop-blur-md" />
+            {/* PIEZA 1: CROP DEL HERO (SOLO MITAD IZQUIERDA - TITULO) */}
+            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[-1deg]">
+              {/* Puzzle Notch Tab */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-emerald-500/40 border-t-2 border-x-2 border-emerald-500/60 rounded-t-lg backdrop-blur-md" />
 
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-[11px] font-black uppercase text-emerald-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #1: HERO & INICIO
+                  PIEZA #1: TITULO HERO (INCOMPLETO)
                 </span>
-                <span className="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800 font-mono">EN PIEZA</span>
+                <span className="text-[10px] bg-red-950 text-red-300 px-2 py-0.5 rounded border border-red-800 font-mono">CORTADO 50%</span>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
-                <img 
-                  src="/screenshots/shot_hero.png" 
-                  alt="Pieza 1 - Conserjería profesional para su copropiedad"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              {/* RECORTE DE IMAGEN CON CLIP PATH */}
+              <div className="relative h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-inner">
+                {/* Visual Representation of Cropped Image */}
+                <div 
+                  className="w-[180%] h-[180%] -mt-[5%] -ml-[5%] bg-no-repeat bg-cover"
+                  style={{ 
+                    backgroundImage: "url('/screenshots/shot_hero.png')",
+                    backgroundPosition: "0% 0%"
+                  }}
                 />
+                {/* Overlay Diagonal Cut Mark */}
+                <div className="absolute bottom-0 right-0 bg-red-600/80 text-white text-[10px] font-mono font-bold px-2 py-1 rounded-tl-lg flex items-center gap-1 backdrop-blur-md">
+                  <Scissors className="w-3 h-3" />
+                  <span>Foto del Conserje Cortada</span>
+                </div>
               </div>
 
               <p className="mt-3 text-center text-xs text-slate-400">
-                Sección principal de presentación de Multiservicios Sosa.
+                Sección del título recortada. La mitad derecha fue desinstalada.
               </p>
             </div>
 
-            {/* PIEZA 2: COMPONENTE BLOQUEADO */}
-            <div className="relative group bg-slate-950/90 border-2 border-dashed border-red-500/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-xl rotate-[0.5deg]">
-              {/* Puzzle Notch (Right) */}
+            {/* PIEZA 2: PIEZA FALTANTE (RECORTADA DEL HERO) */}
+            <div className="relative group bg-slate-950/90 border-2 border-dashed border-red-500/60 rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-xl rotate-[1deg]">
+              {/* Puzzle Notch Socket */}
               <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-4 h-10 bg-red-500/30 border-r-2 border-y-2 border-red-500/50 rounded-r-lg backdrop-blur-md" />
 
               <div className="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
@@ -248,10 +269,10 @@ export function SuspendedPuzzlePage() {
               </div>
 
               <div>
-                <span className="text-[11px] font-extrabold uppercase text-red-400">PIEZA #2: COTIZADOR EN VIVO</span>
-                <h5 className="text-base font-bold text-white mt-1">[ Componente Bloqueado ]</h5>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
-                  Calculador automático de tarifas de portería y turnos residenciales deshabilitado.
+                <span className="text-[11px] font-extrabold uppercase text-red-400">PIEZA FALTANTE #2</span>
+                <h5 className="text-base font-bold text-white mt-1">[ Foto de Personal Retirada ]</h5>
+                <p className="text-xs text-slate-400 mt-1 max-w-xs leading-relaxed">
+                  Pieza del rompecabezas que contenía la fotografía del conserje y el botón de cotización.
                 </p>
               </div>
 
@@ -259,108 +280,134 @@ export function SuspendedPuzzlePage() {
                 href={waCancelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 py-2 px-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+                className="w-full mt-1 py-2 px-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
               >
                 <Zap className="w-3.5 h-3.5 text-red-400" />
                 <span>Desbloquear Pieza #2</span>
               </a>
             </div>
 
-            {/* PIEZA 3: PANTALLAZO NUESTROS SERVICIOS */}
+            {/* PIEZA 3: CROP DE SERVICIOS (SOLO 2 TARJETAS) */}
             <div className="relative group bg-slate-900/90 border-2 border-cyan-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-cyan-400 hover:-translate-y-1 rotate-[0.5deg]">
-              {/* Puzzle Notch (Bottom) */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-cyan-500/30 border-b-2 border-x-2 border-cyan-500/50 rounded-b-lg backdrop-blur-md" />
+              {/* Puzzle Notch Tab */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-4 bg-cyan-500/40 border-b-2 border-x-2 border-cyan-500/60 rounded-b-lg backdrop-blur-md" />
 
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-[11px] font-black uppercase text-cyan-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #3: NUESTROS SERVICIOS
+                  PIEZA #3: SERVICIOS (INCOMPLETO)
                 </span>
-                <span className="text-[10px] bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-800 font-mono">EN PIEZA</span>
+                <span className="text-[10px] bg-red-950 text-red-300 px-2 py-0.5 rounded border border-red-800 font-mono">2 DE 6 MOSTRADOS</span>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
-                <img 
-                  src="/screenshots/shot_services.png" 
-                  alt="Pieza 3 - Funciones claras, servicio confiable"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              {/* RECORTE DE IMAGEN CON CROP */}
+              <div className="relative h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-inner">
+                <div 
+                  className="w-[170%] h-[170%] -mt-[10%] -ml-[5%]"
+                  style={{ 
+                    backgroundImage: "url('/screenshots/shot_services.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "top left"
+                  }}
                 />
+                <div className="absolute bottom-0 right-0 bg-red-600/80 text-white text-[10px] font-mono font-bold px-2 py-1 rounded-tl-lg flex items-center gap-1 backdrop-blur-md">
+                  <Scissors className="w-3 h-3" />
+                  <span>4 Tarjetas Recortadas</span>
+                </div>
               </div>
 
               <p className="mt-3 text-center text-xs text-slate-400">
-                Funciones claras y reemplazos por incapacidad en portería.
+                Solo 2 tarjetas visibles. Las 4 tarjetas restantes fueron retiradas.
               </p>
             </div>
 
-            {/* PIEZA 4: PANTALLAZO MARCO LEGAL */}
-            <div className="relative group bg-slate-900/90 border-2 border-indigo-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-indigo-400 hover:-translate-y-1 rotate-[-0.5deg]">
-              {/* Puzzle Notch (Left) */}
-              <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-4 h-10 bg-indigo-500/30 border-l-2 border-y-2 border-indigo-500/50 rounded-l-lg backdrop-blur-md" />
+            {/* PIEZA 4: PIEZA FALTANTE (RECORTADA DE SERVICIOS) */}
+            <div className="relative group bg-slate-950/90 border-2 border-dashed border-amber-500/60 rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-xl rotate-[-1deg]">
+              {/* Puzzle Notch Socket */}
+              <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-4 h-10 bg-amber-500/30 border-l-2 border-y-2 border-amber-500/50 rounded-l-lg backdrop-blur-md" />
 
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <Lock className="w-7 h-7" />
+              </div>
+
+              <div>
+                <span className="text-[11px] font-extrabold uppercase text-amber-400">PIEZA FALTANTE #4</span>
+                <h5 className="text-base font-bold text-white mt-1">[ Servicios 03, 04, 05 y 06 ]</h5>
+                <p className="text-xs text-slate-400 mt-1 max-w-xs leading-relaxed">
+                  Pieza recortada del portafolio que contenía manual de funciones y supervisión.
+                </p>
+              </div>
+
+              <a
+                href={waCancelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-1 py-2 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+              >
+                <Zap className="w-3.5 h-3.5 text-amber-400" />
+                <span>Desbloquear Pieza #4</span>
+              </a>
+            </div>
+
+            {/* PIEZA 5: CROP DE MARCO LEGAL (IZQUIERDA CORTADA) */}
+            <div className="relative group bg-slate-900/90 border-2 border-indigo-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-indigo-400 hover:-translate-y-1 rotate-[0.5deg]">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-[11px] font-black uppercase text-indigo-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #4: MARCO LEGAL & LEY 675
+                  PIEZA #5: MARCO LEGAL (CORTADO)
                 </span>
-                <span className="text-[10px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-800 font-mono">EN PIEZA</span>
+                <span className="text-[10px] bg-red-950 text-red-300 px-2 py-0.5 rounded border border-red-800 font-mono">SIN COLUMNA DERECHA</span>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
-                <img 
-                  src="/screenshots/shot_legal.png" 
-                  alt="Pieza 4 - Servicio con respaldo jurídico Ley 675"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              {/* RECORTE DE IMAGEN MARCO LEGAL */}
+              <div className="relative h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-inner">
+                <div 
+                  className="w-[180%] h-[180%] -mt-[5%] -ml-[5%]"
+                  style={{ 
+                    backgroundImage: "url('/screenshots/shot_legal.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "top left"
+                  }}
                 />
+                <div className="absolute bottom-0 right-0 bg-red-600/80 text-white text-[10px] font-mono font-bold px-2 py-1 rounded-tl-lg flex items-center gap-1 backdrop-blur-md">
+                  <Scissors className="w-3 h-3" />
+                  <span>Ítems 01 a 05 Cortados</span>
+                </div>
               </div>
 
               <p className="mt-3 text-center text-xs text-slate-400">
-                Cumplimiento normativo y régimen de propiedad horizontal.
+                Columna de ítems legales recortada del rompecabezas.
               </p>
             </div>
 
-            {/* PIEZA 5: PANTALLAZO EQUIPO DE TRABAJO */}
-            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[0.5deg]">
+            {/* PIEZA 6: CROP DE EQUIPO (SOLO 1 CONSERJE) */}
+            <div className="relative group bg-slate-900/90 border-2 border-emerald-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-emerald-400 hover:-translate-y-1 rotate-[-0.5deg]">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-[11px] font-black uppercase text-emerald-400 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #5: EQUIPO & CONSERJES
+                  PIEZA #6: FOTOS EQUIPO (RECORTADO)
                 </span>
-                <span className="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800 font-mono">EN PIEZA</span>
+                <span className="text-[10px] bg-red-950 text-red-300 px-2 py-0.5 rounded border border-red-800 font-mono">1 DE 3 FOTOS</span>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
-                <img 
-                  src="/screenshots/shot_team1.png" 
-                  alt="Pieza 5 - Profesionales comprometidos con su copropiedad"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              {/* RECORTE DE IMAGEN EQUIPO */}
+              <div className="relative h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-inner">
+                <div 
+                  className="w-[180%] h-[180%] -mt-[15%] -ml-[10%]"
+                  style={{ 
+                    backgroundImage: "url('/screenshots/shot_team1.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "bottom left"
+                  }}
                 />
+                <div className="absolute bottom-0 right-0 bg-red-600/80 text-white text-[10px] font-mono font-bold px-2 py-1 rounded-tl-lg flex items-center gap-1 backdrop-blur-md">
+                  <Scissors className="w-3 h-3" />
+                  <span>2 Conserjes Cortados</span>
+                </div>
               </div>
 
               <p className="mt-3 text-center text-xs text-slate-400">
-                Personal capacitado e identificado de Multiservicios Sosa.
-              </p>
-            </div>
-
-            {/* PIEZA 6: PANTALLAZO CONSERJES SENIOR & TESTIMONIO */}
-            <div className="relative group bg-slate-900/90 border-2 border-amber-500/40 rounded-3xl p-4 shadow-xl transition-all duration-500 hover:border-amber-400 hover:-translate-y-1 rotate-[-0.5deg]">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-                <span className="text-[11px] font-black uppercase text-amber-400 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  PIEZA #6: PERFILES VERIFICADOS
-                </span>
-                <span className="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-800 font-mono">EN PIEZA</span>
-              </div>
-
-              <div className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
-                <img 
-                  src="/screenshots/shot_team2.png" 
-                  alt="Pieza 6 - Conserjes senior verificados"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-              </div>
-
-              <p className="mt-3 text-center text-xs text-slate-400">
-                Fichas de verificación de conserjes e historial de servicio.
+                Fichas de conserjes restantes retiradas del rompecabezas.
               </p>
             </div>
 
