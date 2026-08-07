@@ -38,45 +38,69 @@ export function SuspendedPuzzlePage() {
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] z-0" />
 
       {/* -------------------------------------------------------------
-          FULL-VIEWPORT LATERAL PUZZLE FRAGMENTS (FULL BLEED LEFT & RIGHT)
+          FULL-VIEWPORT LATERAL PUZZLE PIECES (REAL JIGSAW SVG CLIPPED PIECES)
          ------------------------------------------------------------- */}
+      {/* SVG Definitions for Jigsaw puzzle clip-paths */}
+      <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+        <defs>
+          {/* Pieza Izquierda del Rompecabezas (Con pestaña convexa saliente hacia la derecha) */}
+          <clipPath id="puzzle-left-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0 L 0.85,0 C 0.85,0.15 0.82,0.22 0.88,0.22 C 0.98,0.22 1.0,0.32 0.88,0.32 C 0.82,0.32 0.85,0.40 0.85,0.45 L 0.85,0.60 C 0.85,0.65 0.78,0.68 0.78,0.73 C 0.78,0.80 0.92,0.82 0.92,0.87 C 0.92,0.92 0.85,0.95 0.85,1 L 0,1 Z" />
+          </clipPath>
+          {/* Pieza Derecha del Rompecabezas (Con hendidura cóncava complementaria) */}
+          <clipPath id="puzzle-right-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0.15,0 L 1,0 L 1,1 L 0.15,1 C 0.15,0.95 0.08,0.92 0.08,0.87 C 0.08,0.82 0.22,0.80 0.22,0.73 C 0.22,0.68 0.15,0.65 0.15,0.60 L 0.15,0.45 C 0.15,0.40 0.18,0.32 0.12,0.32 C 0.02,0.32 0,0.22 0.12,0.22 C 0.18,0.22 0.15,0.15 0.15,0 Z" />
+          </clipPath>
+          {/* Pieza Flotante Desprendida Superior */}
+          <clipPath id="puzzle-piece-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0.1,0 C 0.2,0 0.25,0.1 0.25,0.15 C 0.25,0.25 0,0.25 0.1,0 L 0.9,0 C 0.9,0.1 1,0.15 1,0.25 C 1,0.35 0.85,0.3 0.9,0.5 C 0.95,0.5 1,0.6 1,0.7 C 1,0.85 0.8,0.8 0.8,0.9 L 0.8,1 L 0,1 L 0,0.1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden z-0 hidden lg:block">
         
-        {/* LADO IZQUIERDO DE LA PÁGINA (0 a 35% de la pantalla) */}
-        <div className="absolute top-0 left-0 w-[35vw] h-full overflow-hidden bg-[#0a192f] border-r-4 border-cyan-400 shadow-[15px_0_40px_rgba(6,182,212,0.3)]">
-          <div className="w-[100vw] pointer-events-none opacity-90">
+        {/* PIEZA IZQUIERDA DE ROMPECABEZAS (Forma de rompecabezas real recortada con SVG) */}
+        <div 
+          className="absolute top-0 left-0 w-[42vw] h-full transition-transform duration-700 hover:translate-x-[-15px] group"
+          style={{ clipPath: "url(#puzzle-left-clip)" }}
+        >
+          <div className="w-[100vw] h-full bg-[#0a192f] border-r-4 border-cyan-400 opacity-80 backdrop-blur-sm shadow-[20px_0_50px_rgba(6,182,212,0.4)]">
             <Navbar />
             <HeroSection />
             <ServicesSection />
           </div>
-          {/* Tabs de encaje de rompecabezas en el borde */}
-          <div className="absolute top-1/4 -right-4 w-8 h-12 bg-cyan-400 rounded-r-full shadow-lg border-y-2 border-r-2 border-white" />
-          <div className="absolute top-2/3 -right-4 w-8 h-12 bg-cyan-400 rounded-r-full shadow-lg border-y-2 border-r-2 border-white" />
+          {/* Borde brillante del corte de rompecabezas */}
+          <div className="absolute inset-0 bg-cyan-500/10 pointer-events-none mix-blend-overlay" />
         </div>
 
-        {/* LADO DERECHO DE LA PÁGINA (65% a 100% de la pantalla) */}
-        <div className="absolute top-0 right-0 w-[35vw] h-full overflow-hidden bg-[#0a192f] border-l-4 border-cyan-400 shadow-[-15px_0_40px_rgba(6,182,212,0.3)]">
-          <div className="w-[100vw] pointer-events-none opacity-90 transform -translate-x-[65vw]">
+        {/* PIEZA DERECHA DE ROMPECABEZAS (Forma de rompecabezas encajable recortada con SVG) */}
+        <div 
+          className="absolute top-0 right-0 w-[42vw] h-full transition-transform duration-700 hover:translate-x-[15px] group"
+          style={{ clipPath: "url(#puzzle-right-clip)" }}
+        >
+          <div className="w-[100vw] h-full bg-[#0a192f] border-l-4 border-cyan-400 opacity-80 backdrop-blur-sm transform -translate-x-[58vw] shadow-[-20px_0_50px_rgba(6,182,212,0.4)]">
             <Navbar />
             <HeroSection />
             <ServicesSection />
           </div>
-          {/* Socket de encaje de rompecabezas en el borde */}
-          <div className="absolute top-1/3 -left-4 w-8 h-12 bg-[#05070c] rounded-r-full border-y-2 border-r-2 border-cyan-400 shadow-inner" />
-          <div className="absolute top-3/4 -left-4 w-8 h-12 bg-[#05070c] rounded-r-full border-y-2 border-r-2 border-cyan-400 shadow-inner" />
+          {/* Borde brillante del corte de rompecabezas */}
+          <div className="absolute inset-0 bg-cyan-500/10 pointer-events-none mix-blend-overlay" />
         </div>
 
       </div>
 
-      {/* PIEZAS PEQUEÑAS DE ROMPECABEZAS FLOTANDO EN LA GRIETA */}
+      {/* PIEZAS PEQUEÑAS DE ROMPECABEZAS FLOTANDO EN LA GRIETA (CON FORMA REAL SVG) */}
       <div className="fixed inset-0 pointer-events-none z-10 hidden md:block">
-        <div className="absolute top-28 left-[36vw] transform -rotate-12 bg-slate-900/95 border-2 border-red-500/60 p-2.5 rounded-2xl text-[11px] font-mono text-red-400 shadow-2xl backdrop-blur-md flex items-center gap-2">
-          <Puzzle className="w-4 h-4 text-red-500" />
+        {/* Pieza Flotante 1 */}
+        <div className="absolute top-24 left-[34vw] transform -rotate-12 bg-slate-900/95 border-2 border-red-500/70 p-3 rounded-2xl text-[11px] font-mono text-red-400 shadow-[0_0_25px_rgba(239,68,68,0.3)] backdrop-blur-md flex items-center gap-2">
+          <Puzzle className="w-5 h-5 text-red-500 animate-spin" style={{ animationDuration: '8s' }} />
           <span>[ Pieza Desprendida ]</span>
         </div>
 
-        <div className="absolute bottom-28 right-[36vw] transform rotate-12 bg-slate-900/95 border-2 border-amber-500/60 p-2.5 rounded-2xl text-[11px] font-mono text-amber-400 shadow-2xl backdrop-blur-md flex items-center gap-2">
-          <Lock className="w-4 h-4 text-amber-500" />
+        {/* Pieza Flotante 2 */}
+        <div className="absolute bottom-24 right-[34vw] transform rotate-12 bg-slate-900/95 border-2 border-amber-500/70 p-3 rounded-2xl text-[11px] font-mono text-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.3)] backdrop-blur-md flex items-center gap-2">
+          <Lock className="w-5 h-5 text-amber-500" />
           <span>[ Pieza Faltante 50% ]</span>
         </div>
       </div>
