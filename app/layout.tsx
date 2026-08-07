@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   generator: 'v0.app',
 }
 
-import HalfPaidOverlay from '@/components/HalfPaidOverlay'
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +22,6 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${_inter.variable} ${_dmSans.variable} font-sans antialiased`}>
         {children}
-        <HalfPaidOverlay active={true} />
         <Analytics />
       </body>
     </html>
