@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/consergeria-website//_next/:path+",
+        "destination": "/consergeria-website/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
