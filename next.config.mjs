@@ -8,7 +8,6 @@ const nextConfig = {
   },
   output: 'export',
   basePath: '/consergeria-website',
-  assetPrefix: '/consergeria-website/',
 }
 
 export default nextConfig

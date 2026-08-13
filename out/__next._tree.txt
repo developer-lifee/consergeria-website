@@ -1,7 +1,7 @@
 :HL["/consergeria-website/_next/static/chunks/8531fbb6519d6f99.css","style"]
-:HL["/consergeria-website/_next/static/chunks/70c150ca6e198506.css","style"]
+:HL["/consergeria-website/_next/static/chunks/16ac6503f17be3a2.css","style"]
 :HL["/consergeria-website/_next/static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/consergeria-website/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/images/hero-building.jpg","image"]
 :HL["https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-04%20at%203.40.40%20PM-5Y6XJMLW0mYUDZk6G70rVSORMrMdwK.jpeg","image"]
-0:{"buildId":"8fmSoM8cDvYzvyG0nx2WT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"4AfBEGsd75iKEjo0-aa5R","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
