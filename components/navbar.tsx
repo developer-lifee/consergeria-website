@@ -35,7 +35,14 @@ export function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <div className="w-10 h-10 flex items-center justify-center relative">
-              <Image src="/logo.png" alt="Logo Multiservicios Sosa" fill className="object-contain" />
+              <img
+                src="/consergeria-website/logo.png"
+                alt="Logo Multiservicios Sosa"
+                className="w-10 h-10 object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = "/logo.png"
+                }}
+              />
             </div>
             <div className="flex flex-col">
               <span

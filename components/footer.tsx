@@ -9,7 +9,14 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 flex items-center justify-center relative">
-                <Image src="/logo.png" alt="Logo Multiservicios Sosa" fill className="object-contain" />
+                <img
+                  src="/consergeria-website/logo.png"
+                  alt="Logo Multiservicios Sosa"
+                  className="w-9 h-9 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = "/logo.png"
+                  }}
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-bold text-background leading-tight tracking-tight">
