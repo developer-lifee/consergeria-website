@@ -1,4 +1,4 @@
-import Image from "next/image"
+import { Shield } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,15 +8,22 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 flex items-center justify-center relative">
+              <div className="w-9 h-9 flex items-center justify-center relative bg-indigo-900/40 rounded-lg border border-indigo-500/30 overflow-hidden">
                 <img
-                  src="/consergeria-website/logo.png"
+                  src="logo.png"
                   alt="Logo Multiservicios Sosa"
                   className="w-9 h-9 object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = "/logo.png"
+                    const target = e.currentTarget;
+                    if (target.getAttribute('data-tried-fallback')) {
+                      target.style.display = 'none';
+                    } else {
+                      target.setAttribute('data-tried-fallback', 'true');
+                      target.src = "/consergeria-website/logo.png";
+                    }
                   }}
                 />
+                <Shield className="w-5 h-5 text-indigo-400 absolute" style={{ zIndex: -1 }} />
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-bold text-background leading-tight tracking-tight">

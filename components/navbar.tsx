@@ -33,16 +33,22 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center relative">
+            <div className="w-10 h-10 flex items-center justify-center relative bg-indigo-900/40 rounded-lg border border-indigo-500/30 overflow-hidden">
               <img
-                src="/consergeria-website/logo.png"
+                src="logo.png"
                 alt="Logo Multiservicios Sosa"
                 className="w-10 h-10 object-contain"
                 onError={(e) => {
-                  e.currentTarget.src = "/logo.png"
+                  const target = e.currentTarget;
+                  if (target.getAttribute('data-tried-fallback')) {
+                    target.style.display = 'none';
+                  } else {
+                    target.setAttribute('data-tried-fallback', 'true');
+                    target.src = "/consergeria-website/logo.png";
+                  }
                 }}
               />
+              <Shield className="w-6 h-6 text-indigo-400 absolute" style={{ zIndex: -1 }} />
             </div>
             <div className="flex flex-col">
               <span
